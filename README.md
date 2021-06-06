@@ -20,13 +20,17 @@ Intel Core i7-8550U CPU 1.80GHz (Kaby Lake R), 1 CPU, 8 logical and 4 physical c
 
 
 
-|                                    Method |      Mean |     Error |    StdDev |    Median | Ratio | RatioSD |   Gen 0 |  Gen 1 | Gen 2 | Allocated |
-|------------------------------------------ |----------:|----------:|----------:|----------:|------:|--------:|--------:|-------:|------:|----------:|
-|                                  PadRight |  5.348 us | 0.1060 us | 0.1486 us |  5.321 us |  1.00 |    0.00 |  4.7607 |      - |     - |     20 KB |
-|                        PadRightWithConcat |  3.221 us | 0.0366 us | 0.0306 us |  3.220 us |  0.60 |    0.02 |  9.5215 |      - |     - |     39 KB |
-|                 PadRightWithInterpolation |  3.361 us | 0.0666 us | 0.1461 us |  3.290 us |  0.63 |    0.03 |  9.5215 |      - |     - |     39 KB |
-|        PadRightWithConcatEnumerableRepeat | 56.097 us | 1.1144 us | 1.9517 us | 55.761 us | 10.55 |    0.52 |  9.5215 |      - |     - |     39 KB |
-| PadRightWithInterpolationEnumerableRepeat | 57.420 us | 1.1123 us | 1.0924 us | 57.181 us | 10.77 |    0.36 |  9.5215 |      - |     - |     39 KB |
-|                     PadRightWithCharArray |  3.902 us | 0.0755 us | 0.1977 us |  3.848 us |  0.74 |    0.05 | 14.3509 |      - |     - |     59 KB |
-|                 PadRightWithStringBuilder | 26.313 us | 0.7737 us | 2.1950 us | 25.629 us |  4.96 |    0.43 | 12.8174 | 1.4038 |     - |     52 KB |
-|           PadRightWithStringBuilderInsert | 99.290 us | 1.9656 us | 1.9305 us | 99.194 us | 18.63 |    0.68 |  9.5215 |      - |     - |     39 KB |
+|                                    Method |      Mean |     Error |    StdDev | Ratio | RatioSD |   Gen 0 |  Gen 1 | Gen 2 | Allocated |
+|------------------------------------------ |----------:|----------:|----------:|------:|--------:|--------:|-------:|------:|----------:|
+|                                  PadRight |  5.513 us | 0.1097 us | 0.2086 us |  1.00 |    0.00 |  4.7607 |      - |     - |     20 KB |
+|                        PadRightWithConcat |  3.363 us | 0.0668 us | 0.1625 us |  0.61 |    0.03 |  9.5215 |      - |     - |     39 KB |
+|                 PadRightWithInterpolation |  3.361 us | 0.0654 us | 0.1791 us |  0.62 |    0.05 |  9.5215 |      - |     - |     39 KB |
+|        PadRightWithConcatEnumerableRepeat | 52.138 us | 1.0076 us | 1.4451 us |  9.48 |    0.51 |  9.5215 |      - |     - |     39 KB |
+| PadRightWithInterpolationEnumerableRepeat | 54.770 us | 1.0897 us | 1.6310 us |  9.92 |    0.49 |  9.5215 |      - |     - |     39 KB |
+|                     PadRightWithCharArray |  3.637 us | 0.0391 us | 0.0326 us |  0.67 |    0.02 | 14.3509 |      - |     - |     59 KB |
+|                 PadRightWithStringBuilder | 23.810 us | 0.4667 us | 0.5188 us |  4.38 |    0.20 | 12.8174 | 1.4038 |     - |     52 KB |
+|           PadRightWithStringBuilderInsert | 94.825 us | 1.8471 us | 2.8758 us | 17.17 |    0.85 |  9.5215 |      - |     - |     39 KB |
+|                  PadRightWithReadOnlySpan |  3.161 us | 0.0469 us | 0.0416 us |  0.58 |    0.02 |  9.5215 |      - |     - |     39 KB |
+|                 PadRightWithZStringConcat |  3.637 us | 0.0454 us | 0.0591 us |  0.67 |    0.03 |  9.5215 |      - |     - |     39 KB |
+| PadRightWithZStringStringBuilderForAppend | 18.337 us | 0.3593 us | 0.6837 us |  3.33 |    0.18 | 20.3857 |      - |     - |     84 KB |
+| PadRightWithZStringStringBuilderNewString |  4.522 us | 0.0608 us | 0.0539 us |  0.83 |    0.03 | 24.9939 | 0.0076 |     - |    103 KB |

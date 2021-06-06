@@ -89,7 +89,34 @@ namespace StringPadding.ConsoleApp
                                     paddingChar: PADDING_CHAR);
         }
 
-        
+
+        [Benchmark]
+        public void PadRightWithZStringConcat()
+        {
+            _ = _stringPadding.PadRightWithZStringConcat(STRING_TO_PADDING,
+                                    totalWidth: TOTAL_WIDTH,
+                                    paddingChar: PADDING_CHAR);
+        }
+
+
+        [Benchmark]
+        public void PadRightWithZStringStringBuilderForAppend()
+        {
+            _ = _stringPadding.PadRightWithZStringStringBuilderForAppend(STRING_TO_PADDING,
+                                    totalWidth: TOTAL_WIDTH,
+                                    paddingChar: PADDING_CHAR);
+        }
+
+
+        [Benchmark]
+        public void PadRightWithZStringStringBuilderNewString()
+        {
+            _ = _stringPadding.PadRightWithZStringStringBuilderNewString(STRING_TO_PADDING,
+                                    totalWidth: TOTAL_WIDTH,
+                                    paddingChar: PADDING_CHAR);
+        }
+
+
 
 
     }

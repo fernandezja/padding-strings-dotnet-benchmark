@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cysharp.Text;
+using System;
 using System.Buffers;
 using System.Linq;
 using System.Text;
@@ -86,6 +87,31 @@ namespace StringPadding.Core
         }
 
 
+        public string PadRightWithZStringConcat(string inputText, int totalWidth, char paddingChar)
+        {
 
+            return ZString.Concat(inputText, new string(paddingChar, totalWidth - inputText.Length));
+        }
+
+        public string PadRightWithZStringStringBuilderForAppend(string inputText, int totalWidth, char paddingChar)
+        {
+            var zsb = ZString.CreateStringBuilder();
+            zsb.Append(inputText);
+
+            for (int i = 0; i < (totalWidth - inputText.Length); i++)
+            {
+                zsb.Append(paddingChar);
+            }
+
+            return zsb.ToString();
+        }
+
+        public string PadRightWithZStringStringBuilderNewString(string inputText, int totalWidth, char paddingChar)
+        {
+            var zsb = ZString.CreateStringBuilder();
+            zsb.Append(inputText);
+            zsb.Append(new string(paddingChar, totalWidth - inputText.Length));
+            return zsb.ToString();
+        }
     }
 }

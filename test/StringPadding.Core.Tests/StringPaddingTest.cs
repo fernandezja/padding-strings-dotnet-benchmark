@@ -86,7 +86,37 @@ namespace StringPadding.Core.Tests
             Assert.Equal("Starwars!!", result);
         }
 
+        [Fact]
+        public void PadRightWithZStringConcat_Simple()
+        {
+            var result = _stringPadding.PadRightWithZStringConcat("Starwars", totalWidth: 10, paddingChar: '!');
+
+            Assert.Equal("Starwars!!", result);
+        }
+
+
+        [Fact]
+        public void PadRightWithZStringStringBuilderForAppend_Simple()
+        {
+            var result = _stringPadding.PadRightWithZStringStringBuilderForAppend("Starwars", totalWidth: 10, paddingChar: '!');
+
+            Assert.Equal("Starwars!!", result);
+        }
+
+
+        [Fact]
+        public void PadRightWithZStringStringBuilderNewString_Simple()
+        {
+            var result = _stringPadding.PadRightWithZStringStringBuilderNewString("Starwars", totalWidth: 10, paddingChar: '!');
+
+            Assert.Equal("Starwars!!", result);
+        }
+
+
         
+
+
+
 
 
 
