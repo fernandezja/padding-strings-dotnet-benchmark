@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Buffers;
 using System.Linq;
 using System.Text;
 
@@ -74,6 +75,17 @@ namespace StringPadding.Core
 
             return sb.ToString();
         }
+
+        public string PadRightWithReadOnlySpan(string inputText, int totalWidth, char paddingChar)
+        {
+            var inputTextSpan = inputText.AsSpan();
+            var paddingCharSpan = (new string(paddingChar, totalWidth - inputText.Length)).AsSpan();
+
+
+            return string.Concat(inputText, paddingCharSpan);
+        }
+
+
 
     }
 }

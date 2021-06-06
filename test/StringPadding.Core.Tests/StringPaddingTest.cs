@@ -78,6 +78,17 @@ namespace StringPadding.Core.Tests
             Assert.Equal("Starwars!!", result);
         }
 
+        [Fact]
+        public void PadRightWithReadOnlySpan_Simple()
+        {
+            var result = _stringPadding.PadRightWithReadOnlySpan("Starwars", totalWidth: 10, paddingChar: '!');
+
+            Assert.Equal("Starwars!!", result);
+        }
+
         
+
+
+
     }
 }

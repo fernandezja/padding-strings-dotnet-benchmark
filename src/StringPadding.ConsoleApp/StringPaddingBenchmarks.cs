@@ -81,7 +81,16 @@ namespace StringPadding.ConsoleApp
                                     paddingChar: PADDING_CHAR);
         }
 
+        [Benchmark]
+        public void PadRightWithReadOnlySpan()
+        {
+            _ = _stringPadding.PadRightWithReadOnlySpan(STRING_TO_PADDING,
+                                    totalWidth: TOTAL_WIDTH,
+                                    paddingChar: PADDING_CHAR);
+        }
 
         
+
+
     }
 }
