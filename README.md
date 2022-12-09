@@ -1,6 +1,8 @@
 # padding-strings-dotnet-benchmark
 Some methods to padding string (Benchmark in c#)
 
+[![.NET](https://github.com/fernandezja/padding-strings-dotnet-benchmark/actions/workflows/CI-dotnet.yml/badge.svg)](https://github.com/fernandezja/padding-strings-dotnet-benchmark/actions/workflows/CI-dotnet.yml)
+
  ### Benchmark Results 
 
 Data Test
