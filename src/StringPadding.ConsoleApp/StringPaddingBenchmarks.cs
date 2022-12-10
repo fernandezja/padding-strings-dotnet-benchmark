@@ -1,4 +1,5 @@
 ﻿using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Jobs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,8 @@ using System.Threading.Tasks;
 namespace StringPadding.ConsoleApp
 {
     [MemoryDiagnoser]
+    [SimpleJob(RuntimeMoniker.Net60, baseline: true)]
+    [SimpleJob(RuntimeMoniker.Net70)]
     public class StringPaddingBenchmarks
     {
         private const string STRING_TO_PADDING = "The Force will be with you always";
